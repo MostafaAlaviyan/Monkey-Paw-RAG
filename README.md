@@ -335,7 +335,7 @@ ChromaDB
          Context + Question
                 │
                 ▼
-          Llama 3.1 8B
+         qwen2.5:0.5b
                 │
                 ▼
              Answer
