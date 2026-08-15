@@ -1,6 +1,6 @@
 # The Monkey's Paw — Local RAG Chatbot
 
-A simple **Retrieval-Augmented Generation (RAG)** chatbot that answers questions about *The Monkey's Paw* using **ChromaDB**, **Sentence Transformers**, and **Llama 3.1** running locally through **Ollama**.
+A simple **Retrieval-Augmented Generation (RAG)** chatbot that answers questions about *The Monkey's Paw* using **ChromaDB**, **Sentence Transformers**, and **qwen2.5:0.5b** running locally through **Ollama**.
 
 The project is designed as a simple, transparent implementation of a RAG pipeline, with document ingestion, vector retrieval, and LLM-based answer generation separated into independent modules.
 
