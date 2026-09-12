@@ -1,12 +1,12 @@
+from pathlib import Path
+
 import chromadb
 from sentence_transformers import SentenceTransformer
 
 
-# ---------------------------------------------------------
+# =========================
 # Configuration
-# ---------------------------------------------------------
-
-from pathlib import Path
+# =========================
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,81 +14,70 @@ CHROMA_PATH = ROOT_DIR / "chroma_db"
 COLLECTION_NAME = "Monkey_Paw"
 
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+TOP_K = 5
 
-TOP_K = 3
 
-
-# ---------------------------------------------------------
+# =========================
 # Retriever
-# ---------------------------------------------------------
+# =========================
 
 class Retriever:
 
-    def __init__(self):
-
-        print("Loading embedding model...")
-
-        self.embedding_model = SentenceTransformer(
-            EMBEDDING_MODEL
-        )
-
-        print("Connecting to ChromaDB...")
+    def __init__(
+        self,
+        chroma_path=CHROMA_PATH,
+        collection_name=COLLECTION_NAME,
+        embedding_model=EMBEDDING_MODEL,
+    ):
+        self.embedding_model = SentenceTransformer(embedding_model)
 
         self.client = chromadb.PersistentClient(
-            path=CHROMA_PATH
+            path=str(chroma_path)
         )
 
         self.collection = self.client.get_collection(
-            name=COLLECTION_NAME
+            name=collection_name
         )
 
-    # -----------------------------------------------------
-
-    def retrieve(
-        self,
-        query: str,
-        top_k: int = TOP_K
-    ):
-        """Retrieve the most relevant chunks."""
+    def retrieve(self, query, top_k=TOP_K):
 
         query_embedding = self.embedding_model.encode(
             query
-        )
+        ).tolist()
 
         results = self.collection.query(
-            query_embeddings=[
-                query_embedding.tolist()
-            ],
-            n_results=top_k
+            query_embeddings=[query_embedding],
+            n_results=top_k,
         )
 
-        documents = results["documents"][0]
+        return {
+            "ids": results["ids"][0],
+            "documents": results["documents"][0],
+            "distances": results["distances"][0],
+        }
 
-        return documents
 
-
-# ---------------------------------------------------------
+# =========================
 # Test
-# ---------------------------------------------------------
+# =========================
 
 if __name__ == "__main__":
 
     retriever = Retriever()
 
-    question = input(
-        "Enter your question: "
-    )
+    query = "What was the first wish?"
 
-    results = retriever.retrieve(question)
+    results = retriever.retrieve(query, top_k=3)
 
-    print("\nRetrieved context:\n")
-
-    for i, document in enumerate(results, start=1):
-
-        print("=" * 60)
-
-        print(f"Chunk {i}")
-
-        print("=" * 60)
-
-        print(document)
+    for rank, (chunk_id, document, distance) in enumerate(
+        zip(
+            results["ids"],
+            results["documents"],
+            results["distances"],
+        ),
+        start=1,
+    ):
+        print(f"\nRank {rank}")
+        print(f"Chunk ID: {chunk_id}")
+        print(f"Distance: {distance}")
+        print(f"Text: {document[:300]}...")

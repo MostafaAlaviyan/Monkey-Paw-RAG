@@ -4,3 +4,5 @@ __pycache__/
 assest/
 venv/
 data/
+ evaluation/results/
+*.text

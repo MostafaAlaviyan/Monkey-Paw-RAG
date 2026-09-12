@@ -3,43 +3,42 @@ from chat import generate_answer
 
 
 def main():
-
-    print("=" * 60)
-    print("        The Monkey's Paw - RAG Chatbot")
-    print("=" * 60)
-
     retriever = Retriever()
 
-    print("\nRAG chatbot is ready.")
+    print("Monkey's Paw RAG")
     print("Type 'exit' to quit.\n")
 
     while True:
-
-        question = input("You: ").strip()
+        question = input("Question: ")
 
         if question.lower() == "exit":
-            print("Goodbye!")
             break
 
-        if not question:
-            continue
-
-        print("\nSearching the story...")
-
-        context = retriever.retrieve(
-            question,
-            top_k=3
+        # Retrieve relevant chunks
+        results = retriever.retrieve(
+            question
         )
 
-        print("Generating answer...\n")
+        # Extract retrieved documents for the LLM
+        context = results["documents"]
+        
 
+        # Generate answer
         answer = generate_answer(
             question,
             context
         )
 
-        print("Assistant:")
+        print("\nAnswer:")
         print(answer)
+
+        # Optional: show retrieved chunks
+        print("\nRetrieved chunks:")
+        for rank, chunk_id in enumerate(
+            results["ids"],
+            start=1
+        ):
+            print(f"{rank}. {chunk_id}")
 
         print()
 
