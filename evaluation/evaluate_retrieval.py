@@ -20,6 +20,7 @@ import chromadb
 # Config
 # ============================================================
 
+K = 5
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATASET_PATH = ROOT_DIR / "evaluation" / "datasets" / "dataset_ground_truth.json"
@@ -199,7 +200,8 @@ def average_precision_at_k(retrieved: list[str], relevant: set[str], k: int) -> 
 def evaluate_query(
     retriever: Retriever,
     chunks: list[dict[str, Any]],
-    record: dict[str, Any]
+    record: dict[str, Any],
+    k: int,
 ) -> dict[str, Any]:
 
     relevant, evidence_matches = find_relevant_chunks(chunks, record["evidence"])
@@ -282,7 +284,7 @@ def main() -> None:
     results = []
     for i, record in enumerate(dataset, start=1):
         print(f"\rEvaluating {i}/{len(dataset)}...", end="", flush=True)
-        results.append(evaluate_query(retriever, chunks, record))
+        results.append(evaluate_query(retriever, chunks, record, K))
     print()
 
     summary = summarize(results, K)

@@ -39,7 +39,7 @@ class Retriever:
             name=collection_name
         )
 
-    def retrieve(self, query, top_k=TOP_K):
+    def retrieve(self, query, top_k):
 
         query_embedding = self.embedding_model.encode(
             query
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     query = "What was the first wish?"
 
-    results = retriever.retrieve(query, top_k=3)
+    results = retriever.retrieve(query, top_k=TOP_K)
 
     for rank, (chunk_id, document, distance) in enumerate(
         zip(
