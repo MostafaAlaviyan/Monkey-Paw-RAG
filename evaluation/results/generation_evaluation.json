@@ -1,0 +1,310 @@
+{
+  "metrics": {
+    "BLEU": 0.04686182978728434,
+    "ROUGE-L": 0.2298107439970568,
+    "METEOR": 0.1911917766205267,
+    "BERTScore": 0.879957358042399
+  },
+  "results": [
+    {
+      "id": "q01",
+      "question": "Where does the White family live at the beginning of the story?",
+      "reference_answer": "The White family lives at Laburnam Villa.",
+      "generated_answer": "In the story, the White family lives in the small house at Laburnam Villa.",
+      "BLEU": 0.11889099988983354,
+      "ROUGE-L": 0.6666666666666666,
+      "METEOR": 0.8733103631062814,
+      "BERTScore": 0.9489493370056152
+    },
+    {
+      "id": "q02",
+      "question": "What game are Mr. White and Herbert playing at the beginning of the story?",
+      "reference_answer": "Mr. White and Herbert are playing chess.",
+      "generated_answer": "The game is chess.",
+      "BLEU": 0.037951271263104894,
+      "ROUGE-L": 0.18181818181818182,
+      "METEOR": 0.07462686567164178,
+      "BERTScore": 0.9124566912651062
+    },
+    {
+      "id": "q03",
+      "question": "Who visits the White family on the stormy night?",
+      "reference_answer": "Sergeant-Major Morris visits the White family.",
+      "generated_answer": "The visitor is a young man dressed in a silk hat, wearing a long dress, and carrying a long cane.",
+      "BLEU": 0,
+      "ROUGE-L": 0.07407407407407408,
+      "METEOR": 0.06756756756756757,
+      "BERTScore": 0.8435690402984619
+    },
+    {
+      "id": "q04",
+      "question": "How many years had Sergeant-Major Morris been away, and what country is mentioned in connection with his travels?",
+      "reference_answer": "He had been away for twenty-one years, and India is mentioned in connection with his travels.",
+      "generated_answer": "21 years, distant parts",
+      "BLEU": 0.004000034562268221,
+      "ROUGE-L": 0.09523809523809523,
+      "METEOR": 0.03378378378378378,
+      "BERTScore": 0.8524045944213867
+    },
+    {
+      "id": "q05",
+      "question": "What is the monkey's paw?",
+      "reference_answer": "It is an ordinary little paw dried to a mummy that has been enchanted by an old fakir.",
+      "generated_answer": "The monkey's paw is a triangular piece of wood or metal that is often used in various fairy tales and stories.",
+      "BLEU": 0.01291802583371725,
+      "ROUGE-L": 0.15,
+      "METEOR": 0.1092896174863388,
+      "BERTScore": 0.8509195446968079
+    },
+    {
+      "id": "q06",
+      "question": "What was the purpose of the spell placed on the monkey's paw?",
+      "reference_answer": "The fakir placed the spell on the paw to show that fate ruled people's lives and that interfering with fate brought sorrow.",
+      "generated_answer": "to grant wishes",
+      "BLEU": 0.0002018043245514996,
+      "ROUGE-L": 0.07692307692307691,
+      "METEOR": 0.02487562189054727,
+      "BERTScore": 0.8354988098144531
+    },
+    {
+      "id": "q07",
+      "question": "How many wishes can each of the three men have according to the story of the monkey's paw?",
+      "reference_answer": "Each of three separate men can have three wishes.",
+      "generated_answer": "3",
+      "BLEU": 0,
+      "ROUGE-L": 0.0,
+      "METEOR": 0.06097560975609756,
+      "BERTScore": 0.8172779679298401
+    },
+    {
+      "id": "q08",
+      "question": "What was the first man's third wish?",
+      "reference_answer": "His third wish was for death.",
+      "generated_answer": "The first man's third wish was for death.",
+      "BLEU": 0.5169731539571706,
+      "ROUGE-L": 0.6666666666666667,
+      "METEOR": 0.8032258064516131,
+      "BERTScore": 0.9666261076927185
+    },
+    {
+      "id": "q09",
+      "question": "Why does Sergeant-Major Morris warn Mr. White to destroy the monkey's paw?",
+      "reference_answer": "Morris says that the paw has already caused enough mischief and warns Mr. White about what may happen if he keeps it.",
+      "generated_answer": "Because the soldier's wish to be an emperor, fathe.",
+      "BLEU": 0.005656402449311204,
+      "ROUGE-L": 0.06250000000000001,
+      "METEOR": 0.024154589371980676,
+      "BERTScore": 0.846992552280426
+    },
+    {
+      "id": "q10",
+      "question": "How is the monkey's paw supposed to be used?",
+      "reference_answer": "It should be held up in the right hand while the user makes the wish aloud.",
+      "generated_answer": "The monkey's paw is supposed to be used for the third and last wish of the man.",
+      "BLEU": 0.01626739260030573,
+      "ROUGE-L": 0.17647058823529413,
+      "METEOR": 0.18633540372670807,
+      "BERTScore": 0.8843570351600647
+    },
+    {
+      "id": "q11",
+      "question": "What does Herbert jokingly suggest his father should wish for first?",
+      "reference_answer": "Herbert jokingly suggests that his father wish to become an emperor.",
+      "generated_answer": "Wish for two hundred pounds.",
+      "BLEU": 0,
+      "ROUGE-L": 0.12500000000000003,
+      "METEOR": 0.04807692307692308,
+      "BERTScore": 0.8562312126159668
+    },
+    {
+      "id": "q12",
+      "question": "What amount of money does Herbert suggest Mr. White should wish for?",
+      "reference_answer": "Herbert suggests that Mr. White wish for two hundred pounds.",
+      "generated_answer": "Two hundred pounds.",
+      "BLEU": 0.023300535123570106,
+      "ROUGE-L": 0.4615384615384615,
+      "METEOR": 0.31660692951015534,
+      "BERTScore": 0.9079877138137817
+    },
+    {
+      "id": "q13",
+      "question": "What is Mr. White's first wish?",
+      "reference_answer": "Mr. White wishes for two hundred pounds.",
+      "generated_answer": "The first wish is for two hundred pounds.",
+      "BLEU": 0.345720784641941,
+      "ROUGE-L": 0.6666666666666666,
+      "METEOR": 0.6816901408450705,
+      "BERTScore": 0.9309746623039246
+    },
+    {
+      "id": "q14",
+      "question": "What happens to the monkey's paw when Mr. White makes his first wish?",
+      "reference_answer": "The paw moves and twists in his hand like a snake.",
+      "generated_answer": "The monkey's paw, when Mr. White makes his first wish, disappears into the fireplace.",
+      "BLEU": 0.0169861974906263,
+      "ROUGE-L": 0.23076923076923075,
+      "METEOR": 0.08849557522123894,
+      "BERTScore": 0.885539174079895
+    },
+    {
+      "id": "q15",
+      "question": "Why does Herbert initially doubt that the first wish will have any effect?",
+      "reference_answer": "He does not see any money appear and therefore doubts that the monkey's paw has any effect.",
+      "generated_answer": "Because Herbert was worried that if the first wish did not have any effect, he would not be recognized by his father as an emperor and the rest of his family.",
+      "BLEU": 0.009020544569112136,
+      "ROUGE-L": 0.16326530612244897,
+      "METEOR": 0.16304347826086957,
+      "BERTScore": 0.8723195791244507
+    },
+    {
+      "id": "q16",
+      "question": "What does Mrs. White think about the possibility of wishes being granted the next morning?",
+      "reference_answer": "She thinks the idea is nonsense and doubts that wishes can be granted.",
+      "generated_answer": "I cannot find the answer in the provided story.",
+      "BLEU": 0.015375695992413887,
+      "ROUGE-L": 0.09090909090909093,
+      "METEOR": 0.03968253968253969,
+      "BERTScore": 0.8796876668930054
+    },
+    {
+      "id": "q17",
+      "question": "What does the visitor from Maw and Meggins tell the White family about Herbert?",
+      "reference_answer": "He tells them that Herbert was badly hurt after being caught in the machinery and that the family has suffered a great loss.",
+      "generated_answer": "\"I cannot find the answer in the provided story.\"",
+      "BLEU": 0.011845834831389755,
+      "ROUGE-L": 0.125,
+      "METEOR": 0.06944444444444445,
+      "BERTScore": 0.8573929667472839
+    },
+    {
+      "id": "q18",
+      "question": "How did Herbert die?",
+      "reference_answer": "He was caught in the machinery at Maw and Meggins.",
+      "generated_answer": "Herbert died of a heart attack.",
+      "BLEU": 0,
+      "ROUGE-L": 0.0,
+      "METEOR": 0.0,
+      "BERTScore": 0.8847895264625549
+    },
+    {
+      "id": "q19",
+      "question": "How much compensation does Maw and Meggins offer the White family?",
+      "reference_answer": "They offer the family two hundred pounds as compensation.",
+      "generated_answer": "Two hundred pounds.",
+      "BLEU": 0.015377056977980369,
+      "ROUGE-L": 0.5,
+      "METEOR": 0.2232142857142857,
+      "BERTScore": 0.9095568060874939
+    },
+    {
+      "id": "q20",
+      "question": "Why is the amount of compensation significant to Mr. White?",
+      "reference_answer": "It is exactly the two hundred pounds that Mr. White wished for with the monkey's paw.",
+      "generated_answer": "Mr. White is trying to claim compensation for the death of his wife and her dead son.",
+      "BLEU": 0.03058760346458022,
+      "ROUGE-L": 0.23529411764705882,
+      "METEOR": 0.23105590062111803,
+      "BERTScore": 0.8749542236328125
+    },
+    {
+      "id": "q21",
+      "question": "Why does Mrs. White want to use the monkey's paw for a second wish?",
+      "reference_answer": "She realizes that they have used only one wish and wants to wish Herbert alive again.",
+      "generated_answer": "Because she wants to make him take the paw.",
+      "BLEU": 0.023298472850403023,
+      "ROUGE-L": 0.24000000000000005,
+      "METEOR": 0.20629084967320263,
+      "BERTScore": 0.8716244101524353
+    },
+    {
+      "id": "q22",
+      "question": "Why is Mr. White afraid to make the second wish?",
+      "reference_answer": "He fears that Herbert's body was badly mutilated and that bringing him back could result in something terrible.",
+      "generated_answer": "He would not tell you else, but—I could only recognize him by his clothing. If he was too terrible for you to see then, how now?",
+      "BLEU": 0.010275474580767148,
+      "ROUGE-L": 0.13043478260869565,
+      "METEOR": 0.10638297872340426,
+      "BERTScore": 0.8641769289970398
+    },
+    {
+      "id": "q23",
+      "question": "What is Mr. White's second wish?",
+      "reference_answer": "Mr. White wishes for his son to be alive again.",
+      "generated_answer": "To be an emperor, father, to begin with; then you can’t be henpecked.",
+      "BLEU": 0.018476860420522198,
+      "ROUGE-L": 0.16666666666666666,
+      "METEOR": 0.09708737864077671,
+      "BERTScore": 0.8449130058288574
+    },
+    {
+      "id": "q24",
+      "question": "What happens immediately after Mr. White makes the second wish?",
+      "reference_answer": "Nothing appears to happen at first, and Mr. White feels relieved that the talisman seems to have failed.",
+      "generated_answer": "He throws the talisman away.",
+      "BLEU": 0.008439107798396472,
+      "ROUGE-L": 0.1739130434782609,
+      "METEOR": 0.15302727877578176,
+      "BERTScore": 0.9039913415908813
+    },
+    {
+      "id": "q25",
+      "question": "What sound does Mr. White hear after the second wish?",
+      "reference_answer": "He hears a quiet knock at the front door, followed by repeated and increasingly loud knocks.",
+      "generated_answer": "A crack from the piano grie\n\ngh?",
+      "BLEU": 0.009131698392329843,
+      "ROUGE-L": 0.17391304347826086,
+      "METEOR": 0.06622516556291391,
+      "BERTScore": 0.8271510004997253
+    },
+    {
+      "id": "q26",
+      "question": "Who does Mrs. White believe is knocking at the door?",
+      "reference_answer": "She believes that Herbert is knocking at the door.",
+      "generated_answer": "Her husband.",
+      "BLEU": 0,
+      "ROUGE-L": 0.0,
+      "METEOR": 0.0,
+      "BERTScore": 0.9035248756408691
+    },
+    {
+      "id": "q27",
+      "question": "Why does Mr. White try to prevent Mrs. White from opening the door?",
+      "reference_answer": "He fears that the thing outside may be Herbert in a terrible mutilated state and does not want it to enter the house.",
+      "generated_answer": "Because he thought she had something bad planned.",
+      "BLEU": 0,
+      "ROUGE-L": 0.06451612903225806,
+      "METEOR": 0.023255813953488372,
+      "BERTScore": 0.8687743544578552
+    },
+    {
+      "id": "q28",
+      "question": "What does Mr. White search for while his wife is trying to open the door?",
+      "reference_answer": "He searches frantically for the monkey's paw.",
+      "generated_answer": "The monkey's paw.",
+      "BLEU": 0.06333742121977234,
+      "ROUGE-L": 0.6666666666666666,
+      "METEOR": 0.44612794612794615,
+      "BERTScore": 0.9264158010482788
+    },
+    {
+      "id": "q29",
+      "question": "What happens after Mr. White makes his third and final wish?",
+      "reference_answer": "The story does not state the exact wording of the third wish; it says that he makes his third and final wish, after which the knocking suddenly stops.",
+      "generated_answer": "The third and final wish grants the speaker's wish for two hundred pounds, but the speaker has no idea what it is.",
+      "BLEU": 0.040455881289402855,
+      "ROUGE-L": 0.23529411764705882,
+      "METEOR": 0.2089229852524951,
+      "BERTScore": 0.8765389919281006
+    },
+    {
+      "id": "q30",
+      "question": "What does the narrator describe outside the house at the end of the story?",
+      "reference_answer": "The narrator describes a quiet and deserted road under a flickering street lamp.",
+      "generated_answer": "The narrator describes outside the house at the end of the story as being in a condition of desolation and weariness.",
+      "BLEU": 0.051366639095059535,
+      "ROUGE-L": 0.2941176470588235,
+      "METEOR": 0.3089774557165862,
+      "BERTScore": 0.8931248188018799
+    }
+  ]
+}

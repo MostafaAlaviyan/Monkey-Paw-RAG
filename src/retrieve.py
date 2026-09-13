@@ -39,7 +39,7 @@ class Retriever:
             name=collection_name
         )
 
-    def retrieve(self, query, top_k):
+    def retrieve(self, query, top_k=5):
 
         query_embedding = self.embedding_model.encode(
             query
