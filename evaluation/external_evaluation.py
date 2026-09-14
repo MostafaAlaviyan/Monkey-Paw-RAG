@@ -10,7 +10,6 @@ from sentence_transformers import SentenceTransformer, util
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT_DIR / "src"
-
 sys.path.insert(0, str(SRC_DIR))
 from retrieve import Retriever
 from chat import generate_answer
@@ -21,7 +20,6 @@ DATASET_PATH = (
     / "datasets"
     / "dataset_external_evaluation.json"
 )
-
 RESULTS_DIR = ROOT_DIR / "evaluation" / "results"
 GENERATION_RESULTS_PATH = RESULTS_DIR / "generation_results.json"
 EVALUATION_RESULTS_PATH = RESULTS_DIR / "external_evaluation.json"
@@ -914,7 +912,7 @@ def evaluate(
         )
 
     # --------------------------------------------------------
-    # Context Manipulation (جدید)
+    # Context Manipulation
     # --------------------------------------------------------
 
     for item in dataset:

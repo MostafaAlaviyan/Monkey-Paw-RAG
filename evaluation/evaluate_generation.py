@@ -11,7 +11,6 @@ Metrics:
 import json
 import sys
 from pathlib import Path
-
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from nltk.translate.meteor_score import meteor_score
 from rouge_score import rouge_scorer
@@ -26,14 +25,10 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
-
 from retrieve import Retriever
 from chat import generate_answer
-
 DATASET_PATH = ROOT_DIR / "evaluation" / "datasets" / "dataset_ground_truth.json"
 OUTPUT_PATH = ROOT_DIR / "evaluation" / "results"/ "generation_evaluation.json"
-
-
 
 # ============================================================
 # Metrics
@@ -46,7 +41,6 @@ def bleu(reference, generated):
         smoothing_function=SmoothingFunction().method1
     )
 
-
 def rouge_l(reference, generated):
     scorer = rouge_scorer.RougeScorer(
         ["rougeL"],
@@ -57,13 +51,11 @@ def rouge_l(reference, generated):
         generated
     )["rougeL"].fmeasure
 
-
 def meteor(reference, generated):
     return meteor_score(
         [reference.split()],
         generated.split()
     )
-
 
 # ============================================================
 # Evaluation
@@ -153,7 +145,6 @@ def main():
         )
 
     print(f"\nResults saved to: {OUTPUT_PATH}")
-
 
 if __name__ == "__main__":
     main()

@@ -1,25 +1,19 @@
 from pathlib import Path
-
 import chromadb
 from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
-from pathlib import Path
 
 # ---------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-
 PDF_PATH = ROOT_DIR / "data" / "The-Monkeys-Paw.pdf"
 CHROMA_PATH = ROOT_DIR / "chroma_db"
 COLLECTION_NAME = "Monkey_Paw"
-
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
-
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
-
 
 # ---------------------------------------------------------
 # PDF extraction
@@ -39,7 +33,6 @@ def extract_text(pdf_path: Path) -> str:
             pages.append(text)
 
     return "\n".join(pages)
-
 
 # ---------------------------------------------------------
 # Chunking
@@ -69,7 +62,6 @@ def create_chunks(
         start += chunk_size - overlap
 
     return chunks
-
 
 # ---------------------------------------------------------
 # Store in ChromaDB
@@ -132,7 +124,6 @@ def store_chunks(chunks):
         f"Successfully stored {len(chunks)} chunks."
     )
 
-
 # ---------------------------------------------------------
 # Main
 # ---------------------------------------------------------
@@ -163,7 +154,6 @@ def main():
     store_chunks(chunks)
 
     print("Ingestion completed.")
-
 
 if __name__ == "__main__":
     main()

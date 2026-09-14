@@ -1,7 +1,6 @@
 from retrieve import Retriever
 from chat import generate_answer
 
-
 def main():
     retriever = Retriever()
 
@@ -22,7 +21,6 @@ def main():
         # Extract retrieved documents for the LLM
         context = results["documents"]
         
-
         # Generate answer
         answer = generate_answer(
             question,
@@ -41,7 +39,6 @@ def main():
             print(f"{rank}. {chunk_id}")
 
         print()
-
 
 if __name__ == "__main__":
     main()

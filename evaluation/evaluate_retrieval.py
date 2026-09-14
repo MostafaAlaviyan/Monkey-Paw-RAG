@@ -13,7 +13,6 @@ import json
 import sys
 from pathlib import Path
 from typing import Any
-
 import chromadb
 
 # ============================================================
@@ -21,19 +20,15 @@ import chromadb
 # ============================================================
 
 K = 5
-
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DATASET_PATH = ROOT_DIR / "evaluation" / "datasets" / "dataset_ground_truth.json"
 RESULTS_PATH = ROOT_DIR / "evaluation" / "results" / f"retrieval_results_k={K}.json"
 CHROMA_PATH = ROOT_DIR / "chroma_db"
 COLLECTION_NAME = "Monkey_Paw"
-
 SRC_DIR = ROOT_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
-
 from retrieve import Retriever
-
 
 # ============================================================
 # Helpers
@@ -62,7 +57,6 @@ def chunk_sort_key(chunk_id: str):
         return (0, int(chunk_id[6:]))
     return (1, chunk_id)
 
-
 # ============================================================
 # Dataset & chunks
 # ============================================================
@@ -84,7 +78,6 @@ def load_dataset(path: Path) -> list[dict[str, Any]]:
 
     return dataset
 
-
 def load_all_chunks() -> list[dict[str, Any]]:
     """Load current chunks from ChromaDB."""
     client = chromadb.PersistentClient(path=str(CHROMA_PATH))
@@ -99,7 +92,6 @@ def load_all_chunks() -> list[dict[str, Any]]:
         }
         for i, cid in enumerate(result.get("ids", []))
     ]
-
 
 # ============================================================
 # Evidence → relevant chunk IDs
@@ -126,7 +118,6 @@ def find_relevant_chunks(
         relevant.update(hit_ids)
 
     return relevant, matches
-
 
 # ============================================================
 # Retriever output → ordered unique chunk IDs
@@ -156,7 +147,6 @@ def extract_retrieved_chunk_ids(results: Any) -> list[str]:
             ids.append(cid)
     return ids
 
-
 # ============================================================
 # Metrics
 # ============================================================
@@ -180,7 +170,6 @@ def reciprocal_rank_at_k(retrieved: list[str], relevant: set[str], k: int) -> fl
             return 1.0 / rank
     return 0.0
 
-
 def average_precision_at_k(retrieved: list[str], relevant: set[str], k: int) -> float:
     if not relevant:
         return 0.0
@@ -191,7 +180,6 @@ def average_precision_at_k(retrieved: list[str], relevant: set[str], k: int) -> 
             hits += 1
             score += hits / rank
     return score / len(relevant)
-
 
 # ============================================================
 # Evaluate one question
@@ -232,7 +220,6 @@ def evaluate_query(
         },
     }
 
-
 # ============================================================
 # Summary
 # ============================================================
@@ -262,7 +249,6 @@ def summarize(results: list[dict[str, Any]], k: int) -> dict[str, Any]:
             1 for r in results if r["metrics"][f"recall_at_{k}"] == 1.0
         ),
     }
-
 
 # ============================================================
 # Main
@@ -328,7 +314,6 @@ def main() -> None:
 
     print("\n" + "=" * 60)
     print(f"Results saved to:\n{RESULTS_PATH}")
-
 
 if __name__ == "__main__":
     main()

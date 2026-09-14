@@ -1,21 +1,16 @@
 from pathlib import Path
-
 import chromadb
 from sentence_transformers import SentenceTransformer
-
 
 # =========================
 # Configuration
 # =========================
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-
 CHROMA_PATH = ROOT_DIR / "chroma_db"
 COLLECTION_NAME = "Monkey_Paw"
-
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 TOP_K = 5
-
 
 # =========================
 # Retriever
