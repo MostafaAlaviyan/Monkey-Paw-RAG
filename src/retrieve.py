@@ -55,29 +55,3 @@ class Retriever:
             "documents": results["documents"][0],
             "distances": results["distances"][0],
         }
-
-
-# =========================
-# Test
-# =========================
-
-if __name__ == "__main__":
-
-    retriever = Retriever()
-
-    query = "What was the first wish?"
-
-    results = retriever.retrieve(query, top_k=TOP_K)
-
-    for rank, (chunk_id, document, distance) in enumerate(
-        zip(
-            results["ids"],
-            results["documents"],
-            results["distances"],
-        ),
-        start=1,
-    ):
-        print(f"\nRank {rank}")
-        print(f"Chunk ID: {chunk_id}")
-        print(f"Distance: {distance}")
-        print(f"Text: {document[:300]}...")
